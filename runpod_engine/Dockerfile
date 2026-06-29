@@ -1,5 +1,5 @@
-# Pakai base image dari PyTorch yang udah ada CUDA-nya biar sinkron sama RTX 4090
-FROM pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime
+# Pakai base image dari PyTorch terbaru (2.4.0) biar kompatibel sama CogVideoX
+FROM pytorch/pytorch:2.4.0-cuda12.1-cudnn9-runtime
 
 # Set working directory di dalam container
 WORKDIR /app

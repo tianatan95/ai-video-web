@@ -15,38 +15,53 @@ export default function Home() {
     setIsGenerating(true);
     setVideoUrl(null);
     
-    // Teks animasi loading
     setLoadingText("Warming up GPUs...");
-    const stages = ["Generating frames...", "Refining details...", "Finalizing video..."];
-    let step = 0;
-    const interval = setInterval(() => {
-      if(step < stages.length) {
-        setLoadingText(stages[step]);
-        step++;
-      }
-    }, 1200);
     
     try {
-      const response = await fetch("/api/generate", {
+      // 1. Suruh AI kerja dan minta Nomor Antrean (Job ID)
+      const response = await fetch("/api/generate-video", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt, style, aspectRatio, duration })
       });
       
       const data = await response.json();
       
-      if (response.ok) {
-        setVideoUrl(data.videoUrl);
-      } else {
-        alert("Error: " + data.error);
+      if (!response.ok) {
+        throw new Error(data.error || "Gagal menghubungi server.");
       }
+
+      const jobId = data.jobId;
+      setLoadingText("AI is dreaming your video...");
+
+      // 2. Nunggu dan ngecek status AI (Polling) setiap 5 detik
+      const pollInterval = setInterval(async () => {
+        try {
+          const statusRes = await fetch(`/api/check-video?jobId=${jobId}`);
+          const statusData = await statusRes.json();
+
+          if (statusData.status === 'COMPLETED') {
+            clearInterval(pollInterval);
+            setIsGenerating(false);
+            if (statusData.video_base64) {
+              setVideoUrl(`data:video/mp4;base64,${statusData.video_base64}`);
+            }
+          } else if (statusData.status === 'FAILED') {
+            clearInterval(pollInterval);
+            setIsGenerating(false);
+            alert("Maaf, AI gagal membuat video ini. Coba lagi.");
+          } else {
+            // Statusnya masih IN_QUEUE atau IN_PROGRESS, biarin loading jalan terus
+            setLoadingText(`Status: ${statusData.status}...`);
+          }
+        } catch (pollErr) {
+          console.error("Polling error:", pollErr);
+        }
+      }, 5000); // Cek setiap 5 detik
+
     } catch (error) {
       console.error("Failed to fetch:", error);
-      alert("Failed to connect to backend");
-    } finally {
-      clearInterval(interval);
+      alert(error.message);
       setIsGenerating(false);
     }
   };

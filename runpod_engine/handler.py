@@ -9,18 +9,23 @@ from diffusers.utils import export_to_video
 # Hasilnya sangat sinematik, realistis, dan sangat cocok berjalan di GPU RTX 4090 (24GB VRAM).
 MODEL_ID = "THUDM/CogVideoX-2b"
 
-print("🚀 Memuat model CogVideoX ke dalam VRAM... Harap tunggu.")
-# Kita load modelnya pakai float16 biar VRAM nggak jebol
-pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.float16)
-
-# Fitur offload ini krusial biar RTX 4090 nggak kehabisan memori pas ngerender
-pipe.enable_model_cpu_offload() 
-print("✅ Model AI siap menerima perintah!")
+# Variabel global untuk nyimpen model biar nggak didownload ulang terus
+pipe = None
 
 def generate_video(job):
     """
     Fungsi ini yang bakal dipanggil sama Runpod setiap kali ada request dari Web Vercel lo.
     """
+    global pipe
+    
+    # Lazy Loading: Model baru didownload/diload pas ada pesanan masuk pertama kali.
+    # Ini krusial biar Runpod nggak ngira mesin kita "Mati" gara-gara kelamaan download sebelum lapor siap.
+    if pipe is None:
+        print("🚀 Memuat dan mendownload model CogVideoX (15GB)... Harap tunggu.")
+        pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.float16)
+        pipe.enable_model_cpu_offload()
+        print("✅ Model AI sukses terpasang di VRAM!")
+
     job_input = job.get('input', {})
     
     # Mengambil prompt dari user (kalau kosong, pakai prompt default)
