@@ -1,0 +1,140 @@
+2026-06-30 04:48:25.923 | info | iwphzcpjb6al1r | Traceback (most recent call last):\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r |   File "/app/handler.py", line 5, in <module>\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r |     from diffusers import CogVideoXPipeline\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/diffusers/__init__.py", line 5, in <module>\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r |     from .utils import (\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/__init__.py", line 135, in <module>\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r |     from .peft_utils import (\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/peft_utils.py", line 26, in <module>\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r |     from .torch_utils import empty_device_cache\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/torch_utils.py", line 39, in <module>\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r |     "xpu": torch.xpu.empty_cache,\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/torch/__init__.py", line 1833, in __getattr__\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r |     raise AttributeError(f"module '{__name__}' has no attribute '{name}'")\n
+2026-06-30 04:48:26.311 | info | iwphzcpjb6al1r | AttributeError: module 'torch' has no attribute 'xpu'\n
+2026-06-30 04:48:41.999 | error | iwphzcpjb6al1r | worker exited with exit code 1
+2026-06-30 04:48:47.478 | error | iwphzcpjb6al1r | worker exited with exit code 1
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r | Traceback (most recent call last):\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |   File "/app/handler.py", line 5, in <module>\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |     from diffusers import CogVideoXPipeline\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/diffusers/__init__.py", line 5, in <module>\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |     from .utils import (\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/__init__.py", line 135, in <module>\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |     from .peft_utils import (\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/peft_utils.py", line 26, in <module>\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |     from .torch_utils import empty_device_cache\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/torch_utils.py", line 39, in <module>\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |     "xpu": torch.xpu.empty_cache,\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/torch/__init__.py", line 1833, in __getattr__\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |     raise AttributeError(f"module '{__name__}' has no attribute '{name}'")\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r | AttributeError: module 'torch' has no attribute 'xpu'\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r | Traceback (most recent call last):\n
+2026-06-30 04:48:56.011 | info | iwphzcpjb6al1r |   File "/app/handler.py", line 5, in <module>\n
+2026-06-30 04:48:56.012 | info | iwphzcpjb6al1r |     from diffusers import CogVideoXPipeline\n
+2026-06-30 04:48:56.012 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/diffusers/__init__.py", line 5, in <module>\n
+2026-06-30 04:48:56.012 | info | iwphzcpjb6al1r |     from .utils import (\n
+2026-06-30 04:48:56.012 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/__init__.py", line 135, in <module>\n
+2026-06-30 04:48:56.012 | info | iwphzcpjb6al1r |     from .peft_utils import (\n
+2026-06-30 04:48:56.012 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/peft_utils.py", line 26, in <module>\n
+2026-06-30 04:48:56.012 | info | iwphzcpjb6al1r |     from .torch_utils import empty_device_cache\n
+2026-06-30 04:48:56.012 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/torch_utils.py", line 39, in <module>\n
+2026-06-30 04:48:56.012 | info | iwphzcpjb6al1r |     "xpu": torch.xpu.empty_cache,\n
+2026-06-30 04:48:56.012 | info | iwphzcpjb6al1r |   File "/opt/conda/lib/python3.10/site-packages/torch/__init__.py", line 1833, in __getattr__\n
+2026-06-30 04:48:56.012 | info | iwphzcpjb6al1r |     raise AttributeError(f"module '{__name__}' has no attribute '{name}'")\n
+2026-06-30 04:48:56.012 | info | iwphzcpjb6al1r | AttributeError: module 'torch' has no attribute 'xpu'\n
+2026-06-30 04:49:31.492 | error | iwphzcpjb6al1r | worker exited with exit code 1
+2026-06-30 04:49:50.124 | error | iwphzcpjb6al1r | worker exited with exit code 1
+2026-06-30 04:49:56.043 | error | iwphzcpjb6al1r | worker exited with exit code 1
+2026-06-30 04:57:12.536 | error | b1iah3k8atfteh | worker exited with exit code 1
+2026-06-30 04:57:29.359 | error | b1iah3k8atfteh | worker exited with exit code 1
+2026-06-30 04:57:43.283 | error | n6b8jjkgtfw21i | worker exited with exit code 1
+2026-06-30 04:57:46.082 | error | b1iah3k8atfteh | worker exited with exit code 1
+2026-06-30 04:58:01.159 | error | n6b8jjkgtfw21i | worker exited with exit code 1
+2026-06-30 04:58:18.935 | error | n6b8jjkgtfw21i | worker exited with exit code 1
+2026-06-30 04:58:36.541 | error | n6b8jjkgtfw21i | worker exited with exit code 1
+2026-06-30 04:58:54.297 | error | n6b8jjkgtfw21i | worker exited with exit code 1
+2026-06-30 05:05:06.745 | info | t0ztr5bh7laov6 | Traceback (most recent call last):\n
+2026-06-30 05:05:06.745 | info | t0ztr5bh7laov6 |   File "/app/handler.py", line 5, in <module>\n
+2026-06-30 05:05:06.746 | info | t0ztr5bh7laov6 |     from diffusers import CogVideoXPipeline\n
+2026-06-30 05:05:06.746 | info | t0ztr5bh7laov6 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/__init__.py", line 5, in <module>\n
+2026-06-30 05:05:06.746 | info | t0ztr5bh7laov6 |     from .utils import (\n
+2026-06-30 05:05:06.746 | info | t0ztr5bh7laov6 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/__init__.py", line 135, in <module>\n
+2026-06-30 05:05:06.746 | info | t0ztr5bh7laov6 |     from .peft_utils import (\n
+2026-06-30 05:05:06.746 | info | t0ztr5bh7laov6 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/peft_utils.py", line 26, in <module>\n
+2026-06-30 05:05:06.746 | info | t0ztr5bh7laov6 |     from .torch_utils import empty_device_cache\n
+2026-06-30 05:05:06.746 | info | t0ztr5bh7laov6 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/torch_utils.py", line 39, in <module>\n
+2026-06-30 05:05:06.746 | info | t0ztr5bh7laov6 |     "xpu": torch.xpu.empty_cache,\n
+2026-06-30 05:05:06.746 | info | t0ztr5bh7laov6 |   File "/opt/conda/lib/python3.10/site-packages/torch/__init__.py", line 1833, in __getattr__\n
+2026-06-30 05:05:06.746 | info | t0ztr5bh7laov6 |     raise AttributeError(f"module '{__name__}' has no attribute '{name}'")\n
+2026-06-30 05:05:06.746 | info | t0ztr5bh7laov6 | AttributeError: module 'torch' has no attribute 'xpu'\n
+2026-06-30 05:05:09.412 | error | t0ztr5bh7laov6 | worker exited with exit code 1
+2026-06-30 05:05:18.915 | error | t0ztr5bh7laov6 | worker exited with exit code 1
+2026-06-30 05:05:24.932 | error | t0ztr5bh7laov6 | worker exited with exit code 1
+2026-06-30 05:05:33.494 | error | t0ztr5bh7laov6 | worker exited with exit code 1
+2026-06-30 05:05:53.938 | error | t0ztr5bh7laov6 | worker exited with exit code 1
+2026-06-30 05:06:10.838 | error | t0ztr5bh7laov6 | worker exited with exit code 1
+2026-06-30 05:06:19.013 | error | bnkr32pchssyo8 | worker exited with exit code 1
+2026-06-30 05:06:23.512 | info | bnkr32pchssyo8 | Traceback (most recent call last):\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 |   File "/app/handler.py", line 5, in <module>\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 |     from diffusers import CogVideoXPipeline\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/__init__.py", line 5, in <module>\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 |     from .utils import (\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/__init__.py", line 135, in <module>\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 |     from .peft_utils import (\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/peft_utils.py", line 26, in <module>\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 |     from .torch_utils import empty_device_cache\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/torch_utils.py", line 39, in <module>\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 |     "xpu": torch.xpu.empty_cache,\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/torch/__init__.py", line 1833, in __getattr__\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 |     raise AttributeError(f"module '{__name__}' has no attribute '{name}'")\n
+2026-06-30 05:06:23.888 | info | bnkr32pchssyo8 | AttributeError: module 'torch' has no attribute 'xpu'\n
+2026-06-30 05:06:28.002 | error | t0ztr5bh7laov6 | worker exited with exit code 1
+2026-06-30 05:06:39.715 | error | bnkr32pchssyo8 | worker exited with exit code 1
+2026-06-30 05:06:45.104 | error | t0ztr5bh7laov6 | worker exited with exit code 1
+2026-06-30 05:06:58.162 | error | bnkr32pchssyo8 | worker exited with exit code 1
+2026-06-30 05:07:08.775 | info | bnkr32pchssyo8 | Traceback (most recent call last):\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 |   File "/app/handler.py", line 5, in <module>\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 |     from diffusers import CogVideoXPipeline\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/__init__.py", line 5, in <module>\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 |     from .utils import (\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/__init__.py", line 135, in <module>\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 |     from .peft_utils import (\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/peft_utils.py", line 26, in <module>\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 |     from .torch_utils import empty_device_cache\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/torch_utils.py", line 39, in <module>\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 |     "xpu": torch.xpu.empty_cache,\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/torch/__init__.py", line 1833, in __getattr__\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 |     raise AttributeError(f"module '{__name__}' has no attribute '{name}'")\n
+2026-06-30 05:07:09.283 | info | bnkr32pchssyo8 | AttributeError: module 'torch' has no attribute 'xpu'\n
+2026-06-30 05:07:24.808 | error | bnkr32pchssyo8 | worker exited with exit code 1
+2026-06-30 05:07:43.042 | error | bnkr32pchssyo8 | worker exited with exit code 1
+2026-06-30 05:08:01.386 | error | bnkr32pchssyo8 | worker exited with exit code 1
+2026-06-30 05:08:19.858 | error | bnkr32pchssyo8 | worker exited with exit code 1
+2026-06-30 05:08:24.538 | info | bnkr32pchssyo8 | Traceback (most recent call last):\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 |   File "/app/handler.py", line 5, in <module>\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 |     from diffusers import CogVideoXPipeline\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/__init__.py", line 5, in <module>\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 |     from .utils import (\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/__init__.py", line 135, in <module>\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 |     from .peft_utils import (\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/peft_utils.py", line 26, in <module>\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 |     from .torch_utils import empty_device_cache\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/diffusers/utils/torch_utils.py", line 39, in <module>\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 |     "xpu": torch.xpu.empty_cache,\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 |   File "/opt/conda/lib/python3.10/site-packages/torch/__init__.py", line 1833, in __getattr__\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 |     raise AttributeError(f"module '{__name__}' has no attribute '{name}'")\n
+2026-06-30 05:08:24.962 | info | bnkr32pchssyo8 | AttributeError: module 'torch' has no attribute 'xpu'\n
+2026-06-30 05:08:30.791 | error | bnkr32pchssyo8 | worker exited with exit code 1
+2026-06-30 05:24:59.774 | error | 72l4xtugi9hekd | worker exited with exit code 1
+2026-06-30 05:25:06.418 | error | 72l4xtugi9hekd | worker exited with exit code 1
+2026-06-30 05:25:25.268 | error | 72l4xtugi9hekd | worker exited with exit code 1
+2026-06-30 05:25:31.220 | error | 72l4xtugi9hekd | worker exited with exit code 1
+2026-06-30 06:26:00.764 | error | 72l4xtugi9hekd | worker exited with exit code 1
+2026-06-30 06:26:16.240 | error | 72l4xtugi9hekd | worker exited with exit code 1
+2026-06-30 06:26:22.731 | error | 72l4xtugi9hekd | worker exited with exit code 1
+2026-06-30 06:26:27.290 | error | 72l4xtugi9hekd | worker exited with exit code 1
+2026-06-30 07:05:44.584 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 07:06:01.587 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 07:06:18.686 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 07:06:35.688 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 07:06:52.758 | error | wvu6l3osr05myq | worker exited with exit code 1

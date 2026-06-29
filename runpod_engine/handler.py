@@ -1,9 +1,6 @@
 import runpod
-import torch
 import base64
 import os
-from diffusers import CogVideoXPipeline
-from diffusers.utils import export_to_video
 
 # Menggunakan CogVideoX-2B buatan THUDM. Ini adalah salah satu model Open-Source terbaik saat ini.
 # Hasilnya sangat sinematik, realistis, dan sangat cocok berjalan di GPU RTX 4090 (24GB VRAM).
@@ -17,6 +14,9 @@ def generate_video(job):
     Fungsi ini yang bakal dipanggil sama Runpod setiap kali ada request dari Web Vercel lo.
     """
     global pipe
+    import torch
+    from diffusers import CogVideoXPipeline
+    from diffusers.utils import export_to_video
     
     # Lazy Loading: Model baru didownload/diload pas ada pesanan masuk pertama kali.
     # Ini krusial biar Runpod nggak ngira mesin kita "Mati" gara-gara kelamaan download sebelum lapor siap.
