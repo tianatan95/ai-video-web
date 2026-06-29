@@ -40,6 +40,43 @@ export default function Profile() {
         </div>
       </div>
 
+      <div className="glass-panel" style={{ padding: "2rem", marginBottom: "2rem" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
+          <h2 style={{ fontSize: "1.5rem", margin: 0 }}>Social Connections</h2>
+          <span style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.5)", background: "rgba(255,255,255,0.1)", padding: "0.2rem 0.8rem", borderRadius: "20px" }}>Required for Auto-Post</span>
+        </div>
+        
+        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          {/* TikTok Connection */}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1.5rem", background: "rgba(255,255,255,0.03)", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.1)" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+              <span style={{ fontSize: "2rem" }}>🎵</span>
+              <div>
+                <h3 style={{ fontSize: "1.1rem", marginBottom: "0.2rem" }}>TikTok</h3>
+                <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.85rem" }}>Not connected</p>
+              </div>
+            </div>
+            <button style={{ padding: "0.6rem 1.5rem", borderRadius: "8px", background: "white", color: "black", fontWeight: "bold", border: "none", cursor: "pointer" }} onClick={() => alert("Simulasi: Redirecting to TikTok OAuth Login...")}>
+              Connect
+            </button>
+          </div>
+
+          {/* Instagram Connection */}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1.5rem", background: "rgba(255,255,255,0.03)", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.1)" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+              <span style={{ fontSize: "2rem" }}>📸</span>
+              <div>
+                <h3 style={{ fontSize: "1.1rem", marginBottom: "0.2rem" }}>Instagram Reels</h3>
+                <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.85rem" }}>Not connected</p>
+              </div>
+            </div>
+            <button style={{ padding: "0.6rem 1.5rem", borderRadius: "8px", background: "transparent", color: "white", fontWeight: "bold", border: "1px solid rgba(255,255,255,0.3)", cursor: "pointer" }} onClick={() => alert("Simulasi: Redirecting to Instagram OAuth Login...")}>
+              Connect
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div className="glass-panel" style={{ padding: "2rem" }}>
         <h2 style={{ fontSize: "1.5rem", marginBottom: "1.5rem", color: "#ff8888" }}>Danger Zone</h2>
         <p style={{ color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>Once you delete your account, there is no going back. Please be certain.</p>

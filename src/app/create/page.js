@@ -59,6 +59,7 @@ export default function Home() {
 
       <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginBottom: "2rem" }}>
         <a href="/create" style={{ padding: "0.6rem 2rem", borderRadius: "30px", background: "rgba(255,255,255,0.1)", color: "white", textDecoration: "none", fontWeight: "bold", border: "1px solid rgba(255,255,255,0.2)" }}>Create</a>
+        <a href="/clipper" style={{ padding: "0.6rem 2rem", borderRadius: "30px", background: "transparent", color: "rgba(255,255,255,0.5)", textDecoration: "none", fontWeight: "bold", border: "1px solid transparent", transition: "color 0.2s" }} onMouseEnter={(e) => e.target.style.color="white"} onMouseLeave={(e) => e.target.style.color="rgba(255,255,255,0.5)"}>Auto Clipper</a>
         <a href="/gallery" style={{ padding: "0.6rem 2rem", borderRadius: "30px", background: "transparent", color: "rgba(255,255,255,0.5)", textDecoration: "none", fontWeight: "bold", border: "1px solid transparent", transition: "color 0.2s" }} onMouseEnter={(e) => e.target.style.color="white"} onMouseLeave={(e) => e.target.style.color="rgba(255,255,255,0.5)"}>Gallery</a>
       </div>
 

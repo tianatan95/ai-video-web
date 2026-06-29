@@ -1,0 +1,72 @@
+import runpod
+import torch
+import base64
+import os
+from diffusers import CogVideoXPipeline
+from diffusers.utils import export_to_video
+
+# Menggunakan CogVideoX-2B buatan THUDM. Ini adalah salah satu model Open-Source terbaik saat ini.
+# Hasilnya sangat sinematik, realistis, dan sangat cocok berjalan di GPU RTX 4090 (24GB VRAM).
+MODEL_ID = "THUDM/CogVideoX-2b"
+
+print("🚀 Memuat model CogVideoX ke dalam VRAM... Harap tunggu.")
+# Kita load modelnya pakai float16 biar VRAM nggak jebol
+pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.float16)
+
+# Fitur offload ini krusial biar RTX 4090 nggak kehabisan memori pas ngerender
+pipe.enable_model_cpu_offload() 
+print("✅ Model AI siap menerima perintah!")
+
+def generate_video(job):
+    """
+    Fungsi ini yang bakal dipanggil sama Runpod setiap kali ada request dari Web Vercel lo.
+    """
+    job_input = job.get('input', {})
+    
+    # Mengambil prompt dari user (kalau kosong, pakai prompt default)
+    prompt = job_input.get('prompt', 'A cinematic tracking shot of a futuristic cyberpunk city at night, neon lights reflecting on wet streets, 4k resolution.')
+    
+    # Settingan default untuk kualitas video
+    num_frames = job_input.get('num_frames', 49) # Panjang video standar (sekitar 6 detik)
+    guidance_scale = job_input.get('guidance_scale', 6.0)
+
+    print(f"🎬 Mulai merender video untuk prompt: {prompt}")
+
+    try:
+        # Proses merender teks jadi video (Ini yang bikin GPU kerja keras)
+        video_tensor = pipe(
+            prompt=prompt,
+            num_frames=num_frames,
+            guidance_scale=guidance_scale,
+            num_inference_steps=50, # Jumlah step render, 50 udah ngasilin video mulus
+            generator=torch.Generator("cuda").manual_seed(42),
+        ).frames[0]
+
+        # Simpan sementara jadi file .mp4
+        output_path = "/tmp/hasil_video.mp4"
+        export_to_video(video_tensor, output_path, fps=8)
+
+        # Karena ini API, kita ubah videonya jadi format Base64 Text biar gampang dikirim lewat internet ke Vercel
+        with open(output_path, "rb") as video_file:
+            video_b64 = base64.b64encode(video_file.read()).decode("utf-8")
+        
+        # Hapus file sementara biar storage Runpod nggak penuh
+        os.remove(output_path)
+
+        print("✅ Render Selesai! Mengirim video ke Frontend...")
+        
+        return {
+            "status": "success",
+            "video_base64": video_b64,
+            "message": "Video generated successfully"
+        }
+
+    except Exception as e:
+        print(f"❌ Terjadi kesalahan: {str(e)}")
+        return {
+            "status": "error",
+            "message": str(e)
+        }
+
+# Menyalakan server API
+runpod.serverless.start({"handler": generate_video})
