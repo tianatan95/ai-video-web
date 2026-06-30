@@ -1,0 +1,14 @@
+worker is ready
+create container ajisalipay/runpod-ai-video:v4
+v4 Pulling from ajisalipay/runpod-ai-video
+Digest: sha256:90063c63f566018fc46e6d4e86eb8586ad3209ba87e894af39bc65e44e8c57c2
+Status: Image is up to date for ajisalipay/runpod-ai-video:v4
+worker is ready
+start container for ajisalipay/runpod-ai-video:v4: begin
+
+
+error request history:
+bbc3cbd1-43fa-466a-902b-a56649318c7d-e2
+
+bbc3cbd1-43fa-466a-902b-a56649318c7d-e2
+failed
