@@ -4,6 +4,10 @@ FROM runpod/pytorch:1.0.7-cu1290-torch260-ubuntu2204
 # Set working directory di dalam container
 WORKDIR /app
 
+# Paksa huggingface untuk simpan model di dalam folder /app (Container Disk)
+# biar nggak nyasar ke /workspace (Network Volume) yang cuma 5GB
+ENV HF_HOME="/app/cache"
+
 # Copy daftar library yang dibutuhkan
 COPY requirements.txt .
 
