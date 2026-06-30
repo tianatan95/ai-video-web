@@ -1,0 +1,5 @@
+notif error dari web:
+All workers are unhealthy
+Every worker is exiting before it can process jobs, so this endpoint can't serve requests. This usually points to an error in your container image or start command.
+
+gue gak copas error log/ worker log karena tidak muncul

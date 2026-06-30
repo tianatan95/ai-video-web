@@ -1,5 +1,5 @@
-# Pakai base image dari PyTorch 2.4.0 biar kompatibel sama transformers terbaru
-FROM pytorch/pytorch:2.4.0-cuda12.1-cudnn9-runtime
+# Pakai base image dari Runpod PyTorch 2.6.0 biar stabil dan komplit (CUDA 12, Ubuntu 22.04)
+FROM runpod/pytorch:1.0.7-cu1290-torch260-ubuntu2204
 
 # Set working directory di dalam container
 WORKDIR /app
