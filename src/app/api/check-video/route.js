@@ -34,7 +34,7 @@ export async function GET(request) {
     } else if (data.status === 'FAILED') {
       return NextResponse.json({ status: 'FAILED', error: "Video generation failed on GPU." });
     } else {
-      return NextResponse.json({ status: data.status });
+      return NextResponse.json({ status: data.status, full_data: data });
     }
 
   } catch (error) {

@@ -52,7 +52,11 @@ export default function Home() {
             alert("Maaf, AI gagal membuat video ini. Coba lagi.");
           } else {
             // Statusnya masih IN_QUEUE atau IN_PROGRESS, biarin loading jalan terus
-            setLoadingText(`Status: ${statusData.status}...`);
+            if (statusData.status === undefined) {
+              setLoadingText(`Error Raw: ${JSON.stringify(statusData)}`);
+            } else {
+              setLoadingText(`Status: ${statusData.status}...`);
+            }
           }
         } catch (pollErr) {
           console.error("Polling error:", pollErr);

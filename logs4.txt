@@ -1,0 +1,118 @@
+2026-06-30T14:25:42Z loading container image from cache
+2026-06-30T14:26:11Z Loaded image: ajisalipay/runpod-ai-video:v1
+2026-06-30T14:26:12Z v1 Pulling from ajisalipay/runpod-ai-video
+2026-06-30T14:26:12Z 7007490126ef Already exists
+2026-06-30T14:26:12Z db448f520d6b Already exists
+2026-06-30T14:26:12Z 72975114c625 Already exists
+2026-06-30T14:26:12Z 4f4fb700ef54 Already exists
+2026-06-30T14:26:12Z f380de4eb7ff Already exists
+2026-06-30T14:26:12Z 639f8d367aae Pulling fs layer
+2026-06-30T14:26:12Z d1e32979a846 Pulling fs layer
+2026-06-30T14:26:12Z 116b2cb4f2b9 Pulling fs layer
+2026-06-30T14:26:12Z b8d957cd9dda Pulling fs layer
+2026-06-30T14:26:12Z d1e32979a846 Downloading
+2026-06-30T14:26:12Z d1e32979a846 Verifying Checksum
+2026-06-30T14:26:12Z d1e32979a846 Download complete
+2026-06-30T14:26:12Z b8d957cd9dda Download complete
+2026-06-30T14:26:12Z 639f8d367aae Downloading
+2026-06-30T14:26:12Z 639f8d367aae Verifying Checksum
+2026-06-30T14:26:12Z 639f8d367aae Download complete
+2026-06-30T14:26:12Z 639f8d367aae Extracting
+2026-06-30T14:26:12Z 639f8d367aae Extracting
+2026-06-30T14:26:12Z 639f8d367aae Pull complete
+2026-06-30T14:26:12Z d1e32979a846 Extracting
+2026-06-30T14:26:12Z d1e32979a846 Extracting
+2026-06-30T14:26:12Z d1e32979a846 Pull complete
+2026-06-30T14:26:12Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:12Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:12Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:12Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:13Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:13Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:13Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:13Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:13Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:13Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:13Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:13Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:13Z 116b2cb4f2b9 Downloading
+2026-06-30T14:26:14Z 116b2cb4f2b9 Verifying Checksum
+2026-06-30T14:26:14Z 116b2cb4f2b9 Download complete
+2026-06-30T14:26:14Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:14Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:14Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:14Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:14Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:14Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:14Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:14Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:15Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:15Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:15Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:15Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:15Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:15Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:15Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:16Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:16Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:16Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:16Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:16Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:16Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:16Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:16Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:16Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:17Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:17Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:17Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:17Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:17Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:17Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:17Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:17Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:18Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:18Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:18Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:18Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:18Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:18Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:18Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:18Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:19Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:19Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:19Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:19Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:19Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:19Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:19Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:20Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:20Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:20Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:20Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:20Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:20Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:20Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:21Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:21Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:21Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:21Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:21Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:21Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:21Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:21Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:22Z 116b2cb4f2b9 Extracting
+2026-06-30T14:26:22Z 116b2cb4f2b9 Pull complete
+2026-06-30T14:26:22Z b8d957cd9dda Extracting
+2026-06-30T14:26:22Z b8d957cd9dda Extracting
+2026-06-30T14:26:22Z b8d957cd9dda Pull complete
+2026-06-30T14:26:22Z Digest: sha256:e5382982fb4bdd33152ecc0bcd31bd6b7e559313eaa19d6f7735add0b580b6b1
+2026-06-30T14:26:22Z Status: Downloaded newer image for ajisalipay/runpod-ai-video:v1
+2026-06-30T14:26:22Z worker is ready
+2026-06-30T14:27:01Z create container ajisalipay/runpod-ai-video:v1
+2026-06-30T14:27:01Z v1 Pulling from ajisalipay/runpod-ai-video
+2026-06-30T14:27:01Z Digest: sha256:e5382982fb4bdd33152ecc0bcd31bd6b7e559313eaa19d6f7735add0b580b6b1
+2026-06-30T14:27:01Z Status: Image is up to date for ajisalipay/runpod-ai-video:v1
+2026-06-30T14:27:01Z worker is ready
+2026-06-30T14:27:01Z start container for ajisalipay/runpod-ai-video:v1: begin
+2026-06-30T14:30:03Z stop container 5bb1e8e4d90bd4e3d227a7883e3c71c924cbf03806f16a309b4f4b8a09ff5072
+2026-06-30T14:30:05Z remove container
