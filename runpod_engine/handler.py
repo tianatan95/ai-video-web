@@ -53,18 +53,24 @@ def generate_video(job):
         output_path = "/tmp/hasil_video.mp4"
         export_to_video(video_tensor, output_path, fps=8)
 
-        # Karena ini API, kita ubah videonya jadi format Base64 Text biar gampang dikirim lewat internet ke Vercel
-        with open(output_path, "rb") as video_file:
-            video_b64 = base64.b64encode(video_file.read()).decode("utf-8")
+        # Karena ini API, dan video ukurannya besar (bisa kena limit payload Runpod), 
+        # kita upload sementara ke catbox.moe lalu kirim URL-nya ke web Vercel.
+        import subprocess
+        print("Mulai upload video ke internet...")
+        result = subprocess.run(
+            ["curl", "-F", "reqtype=fileupload", "-F", f"fileToUpload=@{output_path}", "https://catbox.moe/user/api.php"],
+            capture_output=True, text=True
+        )
+        video_url = result.stdout.strip()
         
         # Hapus file sementara biar storage Runpod nggak penuh
         os.remove(output_path)
 
-        print("✅ Render Selesai! Mengirim video ke Frontend...")
+        print(f"✅ Render Selesai! Video URL: {video_url}")
         
         return {
             "status": "success",
-            "video_base64": video_b64,
+            "video_url": video_url,
             "message": "Video generated successfully"
         }
 

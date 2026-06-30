@@ -43,9 +43,16 @@ export default function Home() {
           if (statusData.status === 'COMPLETED') {
             clearInterval(pollInterval);
             setIsGenerating(false);
-            if (statusData.video_base64) {
+            if (statusData.video_url) {
+              setVideoUrl(statusData.video_url);
+            } else if (statusData.video_base64) {
               setVideoUrl(`data:video/mp4;base64,${statusData.video_base64}`);
             }
+          } else if (statusData.status === 'COMPLETED_WITH_ERROR') {
+            clearInterval(pollInterval);
+            setIsGenerating(false);
+            alert(`AI Error: ${statusData.error_message}`);
+            setLoadingText(`AI Error: ${statusData.error_message}`);
           } else if (statusData.status === 'FAILED') {
             clearInterval(pollInterval);
             setIsGenerating(false);

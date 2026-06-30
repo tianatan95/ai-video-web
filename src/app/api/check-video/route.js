@@ -26,11 +26,21 @@ export async function GET(request) {
     }
 
     // Bisa IN_QUEUE, IN_PROGRESS, COMPLETED, atau FAILED
-    if (data.status === 'COMPLETED' && data.output && data.output.status === 'success') {
-      return NextResponse.json({ 
-        status: 'COMPLETED',
-        video_base64: data.output.video_base64 
-      });
+    if (data.status === 'COMPLETED') {
+      if (data.output && data.output.status === 'success') {
+        return NextResponse.json({ 
+          status: 'COMPLETED',
+          video_url: data.output.video_url,
+          video_base64: data.output.video_base64 
+        });
+      } else {
+        // Handler caught an exception and returned a dict with error
+        return NextResponse.json({ 
+          status: 'COMPLETED_WITH_ERROR',
+          error_message: data.output ? data.output.message : "Unknown error in output",
+          full_data: data
+        });
+      }
     } else if (data.status === 'FAILED') {
       return NextResponse.json({ status: 'FAILED', error: "Video generation failed on GPU." });
     } else {
