@@ -1,5 +1,6 @@
 import runpod
 import base64
+# Trigger Github Action v2
 import os
 
 # Menggunakan CogVideoX-2B buatan THUDM. Ini adalah salah satu model Open-Source terbaik saat ini.
