@@ -15,6 +15,14 @@ def generate_video(job):
     """
     global pipe
     import torch
+    
+    # Trik gila (Monkey Patch) buat ngelewatin bug "torch.xpu" di Diffusers
+    # PyTorch 2.1.0 nggak punya 'xpu', jadi kita bikin bohongan biar diffusers nggak crash.
+    if not hasattr(torch, 'xpu'):
+        class DummyXPU:
+            def empty_cache(self): pass
+        torch.xpu = DummyXPU()
+
     from diffusers import CogVideoXPipeline
     from diffusers.utils import export_to_video
     
