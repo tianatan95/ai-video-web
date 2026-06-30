@@ -25,7 +25,11 @@ def generate_video(job):
     if pipe is None:
         print("🚀 Memuat dan mendownload model CogVideoX (15GB)... Harap tunggu.")
         pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.float16)
+        
+        # Jurus pamungkas ngirit VRAM biar nggak Out Of Memory (OOM) di 24GB
         pipe.enable_model_cpu_offload()
+        pipe.vae.enable_slicing()
+        pipe.vae.enable_tiling()
         print("✅ Model AI sukses terpasang di VRAM!")
 
     job_input = job.get('input', {})
