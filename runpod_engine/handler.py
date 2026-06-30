@@ -3,9 +3,9 @@ import base64
 # Trigger Github Action v2
 import os
 
-# Menggunakan CogVideoX-2B buatan THUDM. Ini adalah salah satu model Open-Source terbaik saat ini.
-# Hasilnya sangat sinematik, realistis, dan sangat cocok berjalan di GPU RTX 4090 (24GB VRAM).
-MODEL_ID = "THUDM/CogVideoX-2b"
+# Menggunakan CogVideoX-5B buatan THUDM. Ini adalah versi raksasa (5 Miliar Parameter) 
+# yang jauh lebih pintar bikin manusia realistis dibanding versi 2B.
+MODEL_ID = "THUDM/CogVideoX-5b"
 
 # Variabel global untuk nyimpen model biar nggak didownload ulang terus
 pipe = None
