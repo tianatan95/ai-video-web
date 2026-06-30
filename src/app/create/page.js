@@ -163,9 +163,6 @@ export default function Home() {
                 loop 
                 style={{ width: "100%", display: "block" }} 
               />
-              <div style={{ padding: "10px", fontSize: "10px", wordBreak: "break-all", background: "#000" }}>
-                Debug URL: {videoUrl.substring(0, 200)}
-              </div>
             </div>
           ) : (
             <div style={{ textAlign: "center", opacity: 0.5 }}>

@@ -35,20 +35,37 @@ def generate_video(job):
 
     job_input = job.get('input', {})
     
-    # Mengambil prompt dari user (kalau kosong, pakai prompt default)
-    prompt = job_input.get('prompt', 'A cinematic tracking shot of a futuristic cyberpunk city at night, neon lights reflecting on wet streets, 4k resolution.')
+    # Mengambil settingan dari Vercel
+    prompt = job_input.get('prompt', 'A cinematic tracking shot...')
+    aspect_ratio = job_input.get('aspectRatio', '16:9')
+    duration = job_input.get('duration', '5s')
     
-    # Settingan default untuk kualitas video
-    num_frames = job_input.get('num_frames', 49) # Panjang video standar (sekitar 6 detik)
+    # 1. Atur Resolusi (Aspect Ratio)
+    # CogVideoX-2B butuh dimensi kelipatan 16.
+    if aspect_ratio == '9:16':
+        width, height = 432, 768
+    elif aspect_ratio == '1:1':
+        width, height = 512, 512
+    else: # 16:9 default
+        width, height = 768, 432
+        
+    # 2. Atur Durasi (Jumlah Frame)
+    if duration == '3s':
+        num_frames = 25
+    else:
+        num_frames = 49 # Maksimal ~6 detik biar VRAM nggak jebol
+        
     guidance_scale = job_input.get('guidance_scale', 6.0)
 
-    print(f"🎬 Mulai merender video untuk prompt: {prompt}")
+    print(f"🎬 Mulai merender video | Prompt: {prompt} | {aspect_ratio} ({width}x{height}) | Frames: {num_frames}")
 
     try:
         # Proses merender teks jadi video (Ini yang bikin GPU kerja keras)
         video_tensor = pipe(
             prompt=prompt,
             num_frames=num_frames,
+            width=width,
+            height=height,
             guidance_scale=guidance_scale,
             num_inference_steps=50, # Jumlah step render, 50 udah ngasilin video mulus
             generator=torch.Generator("cuda").manual_seed(42),
