@@ -43,7 +43,7 @@ export default function Home() {
           if (statusData.status === 'COMPLETED') {
             clearInterval(pollInterval);
             setIsGenerating(false);
-            if (statusData.video_url) {
+            if (statusData.video_url && statusData.video_url.startsWith('http')) {
               setVideoUrl(statusData.video_url);
             } else if (statusData.video_base64) {
               setVideoUrl(`data:video/mp4;base64,${statusData.video_base64}`);
@@ -163,6 +163,9 @@ export default function Home() {
                 loop 
                 style={{ width: "100%", display: "block" }} 
               />
+              <div style={{ padding: "10px", fontSize: "10px", wordBreak: "break-all", background: "#000" }}>
+                Debug URL: {videoUrl.substring(0, 200)}
+              </div>
             </div>
           ) : (
             <div style={{ textAlign: "center", opacity: 0.5 }}>

@@ -54,9 +54,9 @@ def generate_video(job):
             generator=torch.Generator("cuda").manual_seed(42),
         ).frames[0]
 
-        # Simpan sementara jadi file .mp4 dengan codec H.264 biar bisa diputar di Web (Chrome/Safari)
+        # Simpan sementara jadi file .mp4 dengan kompresi tinggi biar ukurannya kecil (kisaran 1-2 MB)
         output_path = "/tmp/hasil_video.mp4"
-        writer = imageio.get_writer(output_path, fps=8, codec='libx264', macro_block_size=None, pixelformat='yuv420p')
+        writer = imageio.get_writer(output_path, fps=8, codec='libx264', macro_block_size=None, pixelformat='yuv420p', quality=5)
         for frame in video_tensor:
             writer.append_data(np.array(frame))
         writer.close()
@@ -71,14 +71,19 @@ def generate_video(job):
         )
         video_url = result.stdout.strip()
         
+        import base64
+        with open(output_path, "rb") as video_file:
+            video_b64 = base64.b64encode(video_file.read()).decode("utf-8")
+            
         # Hapus file sementara biar storage Runpod nggak penuh
         os.remove(output_path)
 
-        print(f"✅ Render Selesai! Video URL: {video_url}")
+        print(f"✅ Render Selesai! Video URL: {video_url[:50]}... Base64 Lenght: {len(video_b64)}")
         
         return {
             "status": "success",
             "video_url": video_url,
+            "video_base64": video_b64,
             "message": "Video generated successfully"
         }
 
