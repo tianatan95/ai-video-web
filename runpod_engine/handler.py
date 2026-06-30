@@ -21,6 +21,8 @@ def generate_video(job):
     if not hasattr(torch, 'xpu'):
         class DummyXPU:
             def empty_cache(self): pass
+            def device_count(self): return 0
+            def is_available(self): return False
         torch.xpu = DummyXPU()
 
     from diffusers import CogVideoXPipeline

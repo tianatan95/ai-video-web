@@ -1,0 +1,500 @@
+2026-06-30 12:12:12.088 | info | wvu6l3osr05myq |     value = getattr(module, name)\n
+2026-06-30 12:12:12.088 | info | wvu6l3osr05myq |             ^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:12.088 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1006, in __getattr__\n
+2026-06-30 12:12:12.088 | info | wvu6l3osr05myq |     value = getattr(module, name)\n
+2026-06-30 12:12:12.088 | info | wvu6l3osr05myq |             ^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:12.088 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1005, in __getattr__\n
+2026-06-30 12:12:12.088 | info | wvu6l3osr05myq |     module = self._get_module(self._class_to_module[name])\n
+2026-06-30 12:12:12.088 | info | wvu6l3osr05myq |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:12.088 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1017, in _get_module\n
+2026-06-30 12:12:12.089 | info | wvu6l3osr05myq |     raise RuntimeError(\n
+2026-06-30 12:12:12.089 | info | wvu6l3osr05myq | RuntimeError: Failed to import diffusers.pipelines.cogvideo.pipeline_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 12:12:12.089 | info | wvu6l3osr05myq | Failed to import diffusers.models.autoencoders.autoencoder_kl_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 12:12:12.089 | info | wvu6l3osr05myq | infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 12:12:19.395 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 12:12:26.165 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 12:12:26.165 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1015, in _get_module\n
+2026-06-30 12:12:26.165 | info | wvu6l3osr05myq |     return importlib.import_module("." + module_name, self.__name__)\n
+2026-06-30 12:12:26.165 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:26.165 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/importlib/__init__.py", line 126, in import_module\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |     return _bootstrap._gcd_import(name[level:], package, level)\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1126, in _find_and_load_unlocked\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/__init__.py", line 1, in <module>\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |     from .autoencoder_asym_kl import AsymmetricAutoencoderKL\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/autoencoder_asym_kl.py", line 21, in <module>\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |     from .vae import AutoencoderMixin, DecoderOutput, DiagonalGaussianDistribution, Encoder, MaskConditionDecoder\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/vae.py", line 24, in <module>\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |     from ..unets.unet_2d_blocks import (\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/__init__.py", line 6, in <module>\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |     from .unet_2d import UNet2DModel\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/unet_2d.py", line 23, in <module>\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |     from .unet_2d_blocks import UNetMidBlock2D, get_down_block, get_up_block\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/unet_2d_blocks.py", line 36, in <module>\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |     from ..transformers.dual_transformer_2d import DualTransformer2DModel\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/transformers/__init__.py", line 5, in <module>\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |     from .ace_step_transformer import AceStepTransformer1DModel\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/transformers/ace_step_transformer.py", line 26, in <module>\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |     from ..attention_dispatch import (\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/attention_dispatch.py", line 739, in <module>\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |     @_custom_op("_diffusers_flash_attn_3::_flash_attn_forward", mutates_args=(), device_types="cuda")\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/custom_ops.py", line 119, in inner\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |     schema_str = torch._custom_op.impl.infer_schema(fn, mutates_args)\n
+2026-06-30 12:12:26.166 | info | wvu6l3osr05myq |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/infer_schema.py", line 42, in infer_schema\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |     error_fn(\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/infer_schema.py", line 21, in error_fn\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |     raise ValueError(\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq | ValueError: infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq | \n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq | The above exception was the direct cause of the following exception:\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq | \n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1015, in _get_module\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |     return importlib.import_module("." + module_name, self.__name__)\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/importlib/__init__.py", line 126, in import_module\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |     return _bootstrap._gcd_import(name[level:], package, level)\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/pipelines/cogvideo/pipeline_cogvideox.py", line 25, in <module>\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |     from ...models import AutoencoderKLCogVideoX, CogVideoXTransformer3DModel\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1229, in _handle_fromlist\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1005, in __getattr__\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |     module = self._get_module(self._class_to_module[name])\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1017, in _get_module\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq |     raise RuntimeError(\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq | RuntimeError: Failed to import diffusers.models.autoencoders.autoencoder_kl_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 12:12:26.167 | info | wvu6l3osr05myq | infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq | \n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq | The above exception was the direct cause of the following exception:\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq | \n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |   File "/app/handler.py", line 5, in <module>\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |     from diffusers import CogVideoXPipeline\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1229, in _handle_fromlist\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1006, in __getattr__\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |     value = getattr(module, name)\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |             ^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1006, in __getattr__\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |     value = getattr(module, name)\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |             ^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1005, in __getattr__\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |     module = self._get_module(self._class_to_module[name])\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1017, in _get_module\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq |     raise RuntimeError(\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq | RuntimeError: Failed to import diffusers.pipelines.cogvideo.pipeline_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq | Failed to import diffusers.models.autoencoders.autoencoder_kl_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 12:12:26.168 | info | wvu6l3osr05myq | infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 12:12:47.121 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 12:12:52.872 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1015, in _get_module\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |     return importlib.import_module("." + module_name, self.__name__)\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/importlib/__init__.py", line 126, in import_module\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |     return _bootstrap._gcd_import(name[level:], package, level)\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1126, in _find_and_load_unlocked\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 12:12:53.483 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/__init__.py", line 1, in <module>\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |     from .autoencoder_asym_kl import AsymmetricAutoencoderKL\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/autoencoder_asym_kl.py", line 21, in <module>\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |     from .vae import AutoencoderMixin, DecoderOutput, DiagonalGaussianDistribution, Encoder, MaskConditionDecoder\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/vae.py", line 24, in <module>\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |     from ..unets.unet_2d_blocks import (\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/__init__.py", line 6, in <module>\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |     from .unet_2d import UNet2DModel\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/unet_2d.py", line 23, in <module>\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |     from .unet_2d_blocks import UNetMidBlock2D, get_down_block, get_up_block\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/unet_2d_blocks.py", line 36, in <module>\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |     from ..transformers.dual_transformer_2d import DualTransformer2DModel\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/transformers/__init__.py", line 5, in <module>\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |     from .ace_step_transformer import AceStepTransformer1DModel\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/transformers/ace_step_transformer.py", line 26, in <module>\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |     from ..attention_dispatch import (\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/attention_dispatch.py", line 739, in <module>\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |     @_custom_op("_diffusers_flash_attn_3::_flash_attn_forward", mutates_args=(), device_types="cuda")\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/custom_ops.py", line 119, in inner\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |     schema_str = torch._custom_op.impl.infer_schema(fn, mutates_args)\n
+2026-06-30 12:12:53.484 | info | wvu6l3osr05myq |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/infer_schema.py", line 42, in infer_schema\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |     error_fn(\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/infer_schema.py", line 21, in error_fn\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |     raise ValueError(\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq | ValueError: infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq | \n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq | The above exception was the direct cause of the following exception:\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq | \n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1015, in _get_module\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |     return importlib.import_module("." + module_name, self.__name__)\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/importlib/__init__.py", line 126, in import_module\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |     return _bootstrap._gcd_import(name[level:], package, level)\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked\n
+2026-06-30 12:12:53.485 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/pipelines/cogvideo/pipeline_cogvideox.py", line 25, in <module>\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |     from ...models import AutoencoderKLCogVideoX, CogVideoXTransformer3DModel\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1229, in _handle_fromlist\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1005, in __getattr__\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |     module = self._get_module(self._class_to_module[name])\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1017, in _get_module\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |     raise RuntimeError(\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq | RuntimeError: Failed to import diffusers.models.autoencoders.autoencoder_kl_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq | infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq | \n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq | The above exception was the direct cause of the following exception:\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq | \n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |   File "/app/handler.py", line 5, in <module>\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |     from diffusers import CogVideoXPipeline\n
+2026-06-30 12:12:53.486 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1229, in _handle_fromlist\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1006, in __getattr__\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq |     value = getattr(module, name)\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq |             ^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1006, in __getattr__\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq |     value = getattr(module, name)\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq |             ^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1005, in __getattr__\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq |     module = self._get_module(self._class_to_module[name])\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1017, in _get_module\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq |     raise RuntimeError(\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq | RuntimeError: Failed to import diffusers.pipelines.cogvideo.pipeline_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq | Failed to import diffusers.models.autoencoders.autoencoder_kl_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 12:12:53.487 | info | wvu6l3osr05myq | infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 12:13:03.728 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 12:13:11.852 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 12:13:11.852 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1015, in _get_module\n
+2026-06-30 12:13:11.852 | info | wvu6l3osr05myq |     return importlib.import_module("." + module_name, self.__name__)\n
+2026-06-30 12:13:11.852 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/importlib/__init__.py", line 126, in import_module\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |     return _bootstrap._gcd_import(name[level:], package, level)\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1126, in _find_and_load_unlocked\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 12:13:11.853 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/__init__.py", line 1, in <module>\n
+2026-06-30 12:13:11.854 | info | wvu6l3osr05myq |     from .autoencoder_asym_kl import AsymmetricAutoencoderKL\n
+2026-06-30 12:13:11.854 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/autoencoder_asym_kl.py", line 21, in <module>\n
+2026-06-30 12:13:11.854 | info | wvu6l3osr05myq |     from .vae import AutoencoderMixin, DecoderOutput, DiagonalGaussianDistribution, Encoder, MaskConditionDecoder\n
+2026-06-30 12:13:11.854 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/vae.py", line 24, in <module>\n
+2026-06-30 12:13:11.854 | info | wvu6l3osr05myq |     from ..unets.unet_2d_blocks import (\n
+2026-06-30 12:13:11.854 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/__init__.py", line 6, in <module>\n
+2026-06-30 12:13:11.854 | info | wvu6l3osr05myq |     from .unet_2d import UNet2DModel\n
+2026-06-30 12:13:11.854 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/unet_2d.py", line 23, in <module>\n
+2026-06-30 12:13:11.854 | info | wvu6l3osr05myq |     from .unet_2d_blocks import UNetMidBlock2D, get_down_block, get_up_block\n
+2026-06-30 12:13:11.854 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/unet_2d_blocks.py", line 36, in <module>\n
+2026-06-30 12:13:11.855 | info | wvu6l3osr05myq |     from ..transformers.dual_transformer_2d import DualTransformer2DModel\n
+2026-06-30 12:13:11.855 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/transformers/__init__.py", line 5, in <module>\n
+2026-06-30 12:13:11.855 | info | wvu6l3osr05myq |     from .ace_step_transformer import AceStepTransformer1DModel\n
+2026-06-30 12:13:11.855 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/transformers/ace_step_transformer.py", line 26, in <module>\n
+2026-06-30 12:13:11.855 | info | wvu6l3osr05myq |     from ..attention_dispatch import (\n
+2026-06-30 12:13:11.855 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/attention_dispatch.py", line 739, in <module>\n
+2026-06-30 12:13:11.855 | info | wvu6l3osr05myq |     @_custom_op("_diffusers_flash_attn_3::_flash_attn_forward", mutates_args=(), device_types="cuda")\n
+2026-06-30 12:13:11.855 | info | wvu6l3osr05myq |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:13:11.855 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/custom_ops.py", line 119, in inner\n
+2026-06-30 12:13:11.855 | info | wvu6l3osr05myq |     schema_str = torch._custom_op.impl.infer_schema(fn, mutates_args)\n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/infer_schema.py", line 42, in infer_schema\n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq |     error_fn(\n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/infer_schema.py", line 21, in error_fn\n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq |     raise ValueError(\n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq | ValueError: infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq | \n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq | The above exception was the direct cause of the following exception:\n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq | \n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1015, in _get_module\n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq |     return importlib.import_module("." + module_name, self.__name__)\n
+2026-06-30 12:13:11.856 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:13:11.857 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/importlib/__init__.py", line 126, in import_module\n
+2026-06-30 12:13:11.857 | info | wvu6l3osr05myq |     return _bootstrap._gcd_import(name[level:], package, level)\n
+2026-06-30 12:13:11.857 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:13:11.857 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 12:13:11.857 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 12:13:11.857 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked\n
+2026-06-30 12:13:11.857 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked\n
+2026-06-30 12:13:11.857 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module\n
+2026-06-30 12:13:11.857 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/pipelines/cogvideo/pipeline_cogvideox.py", line 25, in <module>\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |     from ...models import AutoencoderKLCogVideoX, CogVideoXTransformer3DModel\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1229, in _handle_fromlist\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1005, in __getattr__\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |     module = self._get_module(self._class_to_module[name])\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1017, in _get_module\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |     raise RuntimeError(\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq | RuntimeError: Failed to import diffusers.models.autoencoders.autoencoder_kl_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq | infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq | \n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq | The above exception was the direct cause of the following exception:\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq | \n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |   File "/app/handler.py", line 5, in <module>\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |     from diffusers import CogVideoXPipeline\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1229, in _handle_fromlist\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1006, in __getattr__\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |     value = getattr(module, name)\n
+2026-06-30 12:13:11.858 | info | wvu6l3osr05myq |             ^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:13:11.859 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1006, in __getattr__\n
+2026-06-30 12:13:11.859 | info | wvu6l3osr05myq |     value = getattr(module, name)\n
+2026-06-30 12:13:11.859 | info | wvu6l3osr05myq |             ^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:13:11.859 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1005, in __getattr__\n
+2026-06-30 12:13:11.859 | info | wvu6l3osr05myq |     module = self._get_module(self._class_to_module[name])\n
+2026-06-30 12:13:11.859 | info | wvu6l3osr05myq |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 12:13:11.859 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1017, in _get_module\n
+2026-06-30 12:13:11.859 | info | wvu6l3osr05myq |     raise RuntimeError(\n
+2026-06-30 12:13:11.859 | info | wvu6l3osr05myq | RuntimeError: Failed to import diffusers.pipelines.cogvideo.pipeline_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 12:13:11.859 | info | wvu6l3osr05myq | Failed to import diffusers.models.autoencoders.autoencoder_kl_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 12:13:11.859 | info | wvu6l3osr05myq | infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 12:13:33.844 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 12:13:50.861 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 12:14:07.864 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 12:14:24.859 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 12:14:41.931 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 13:11:03.646 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 13:11:22.499 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 13:11:34.927 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 13:11:51.204 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 13:11:57.279 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1015, in _get_module\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |     return importlib.import_module("." + module_name, self.__name__)\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/importlib/__init__.py", line 126, in import_module\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |     return _bootstrap._gcd_import(name[level:], package, level)\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1126, in _find_and_load_unlocked\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/__init__.py", line 1, in <module>\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |     from .autoencoder_asym_kl import AsymmetricAutoencoderKL\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/autoencoder_asym_kl.py", line 21, in <module>\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |     from .vae import AutoencoderMixin, DecoderOutput, DiagonalGaussianDistribution, Encoder, MaskConditionDecoder\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/vae.py", line 24, in <module>\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |     from ..unets.unet_2d_blocks import (\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/__init__.py", line 6, in <module>\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |     from .unet_2d import UNet2DModel\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/unet_2d.py", line 23, in <module>\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |     from .unet_2d_blocks import UNetMidBlock2D, get_down_block, get_up_block\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/unet_2d_blocks.py", line 36, in <module>\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |     from ..transformers.dual_transformer_2d import DualTransformer2DModel\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/transformers/__init__.py", line 5, in <module>\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |     from .ace_step_transformer import AceStepTransformer1DModel\n
+2026-06-30 13:11:57.945 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/transformers/ace_step_transformer.py", line 26, in <module>\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |     from ..attention_dispatch import (\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/attention_dispatch.py", line 739, in <module>\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |     @_custom_op("_diffusers_flash_attn_3::_flash_attn_forward", mutates_args=(), device_types="cuda")\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/custom_ops.py", line 119, in inner\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |     schema_str = torch._custom_op.impl.infer_schema(fn, mutates_args)\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/infer_schema.py", line 42, in infer_schema\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |     error_fn(\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/infer_schema.py", line 21, in error_fn\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |     raise ValueError(\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq | ValueError: infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq | \n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq | The above exception was the direct cause of the following exception:\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq | \n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1015, in _get_module\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |     return importlib.import_module("." + module_name, self.__name__)\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:11:57.946 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/importlib/__init__.py", line 126, in import_module\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |     return _bootstrap._gcd_import(name[level:], package, level)\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/pipelines/cogvideo/pipeline_cogvideox.py", line 25, in <module>\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |     from ...models import AutoencoderKLCogVideoX, CogVideoXTransformer3DModel\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1229, in _handle_fromlist\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1005, in __getattr__\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |     module = self._get_module(self._class_to_module[name])\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1017, in _get_module\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq |     raise RuntimeError(\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq | RuntimeError: Failed to import diffusers.models.autoencoders.autoencoder_kl_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq | infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 13:11:57.947 | info | wvu6l3osr05myq | \n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq | The above exception was the direct cause of the following exception:\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq | \n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |   File "/app/handler.py", line 5, in <module>\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |     from diffusers import CogVideoXPipeline\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1229, in _handle_fromlist\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1006, in __getattr__\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |     value = getattr(module, name)\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |             ^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1006, in __getattr__\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |     value = getattr(module, name)\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |             ^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1005, in __getattr__\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |     module = self._get_module(self._class_to_module[name])\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1017, in _get_module\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq |     raise RuntimeError(\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq | RuntimeError: Failed to import diffusers.pipelines.cogvideo.pipeline_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq | Failed to import diffusers.models.autoencoders.autoencoder_kl_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 13:11:57.948 | info | wvu6l3osr05myq | infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 13:12:06.571 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 13:12:26.512 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 13:12:32.256 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 13:12:32.881 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1015, in _get_module\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |     return importlib.import_module("." + module_name, self.__name__)\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/importlib/__init__.py", line 126, in import_module\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |     return _bootstrap._gcd_import(name[level:], package, level)\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1126, in _find_and_load_unlocked\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked\n
+2026-06-30 13:12:32.882 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/__init__.py", line 1, in <module>\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |     from .autoencoder_asym_kl import AsymmetricAutoencoderKL\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/autoencoder_asym_kl.py", line 21, in <module>\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |     from .vae import AutoencoderMixin, DecoderOutput, DiagonalGaussianDistribution, Encoder, MaskConditionDecoder\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/autoencoders/vae.py", line 24, in <module>\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |     from ..unets.unet_2d_blocks import (\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/__init__.py", line 6, in <module>\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |     from .unet_2d import UNet2DModel\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/unet_2d.py", line 23, in <module>\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |     from .unet_2d_blocks import UNetMidBlock2D, get_down_block, get_up_block\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/unets/unet_2d_blocks.py", line 36, in <module>\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |     from ..transformers.dual_transformer_2d import DualTransformer2DModel\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/transformers/__init__.py", line 5, in <module>\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |     from .ace_step_transformer import AceStepTransformer1DModel\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/transformers/ace_step_transformer.py", line 26, in <module>\n
+2026-06-30 13:12:32.883 | info | wvu6l3osr05myq |     from ..attention_dispatch import (\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/models/attention_dispatch.py", line 739, in <module>\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |     @_custom_op("_diffusers_flash_attn_3::_flash_attn_forward", mutates_args=(), device_types="cuda")\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/custom_ops.py", line 119, in inner\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |     schema_str = torch._custom_op.impl.infer_schema(fn, mutates_args)\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/infer_schema.py", line 42, in infer_schema\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |     error_fn(\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/torch/_library/infer_schema.py", line 21, in error_fn\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |     raise ValueError(\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq | ValueError: infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq | \n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq | The above exception was the direct cause of the following exception:\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq | \n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1015, in _get_module\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |     return importlib.import_module("." + module_name, self.__name__)\n
+2026-06-30 13:12:32.884 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/importlib/__init__.py", line 126, in import_module\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |     return _bootstrap._gcd_import(name[level:], package, level)\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/pipelines/cogvideo/pipeline_cogvideox.py", line 25, in <module>\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |     from ...models import AutoencoderKLCogVideoX, CogVideoXTransformer3DModel\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1229, in _handle_fromlist\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1005, in __getattr__\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |     module = self._get_module(self._class_to_module[name])\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1017, in _get_module\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq |     raise RuntimeError(\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq | RuntimeError: Failed to import diffusers.models.autoencoders.autoencoder_kl_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 13:12:32.885 | info | wvu6l3osr05myq | infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq | \n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq | The above exception was the direct cause of the following exception:\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq | \n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq | Traceback (most recent call last):\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |   File "/app/handler.py", line 5, in <module>\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |     from diffusers import CogVideoXPipeline\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |   File "<frozen importlib._bootstrap>", line 1229, in _handle_fromlist\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1006, in __getattr__\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |     value = getattr(module, name)\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |             ^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1006, in __getattr__\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |     value = getattr(module, name)\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |             ^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1005, in __getattr__\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |     module = self._get_module(self._class_to_module[name])\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |   File "/opt/conda/lib/python3.11/site-packages/diffusers/utils/import_utils.py", line 1017, in _get_module\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq |     raise RuntimeError(\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq | RuntimeError: Failed to import diffusers.pipelines.cogvideo.pipeline_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq | Failed to import diffusers.models.autoencoders.autoencoder_kl_cogvideox because of the following error (look up to see its traceback):\n
+2026-06-30 13:12:32.886 | info | wvu6l3osr05myq | infer_schema(func): Parameter q has unsupported type torch.Tensor. The valid types are: dict_keys([<class 'torch.Tensor'>, typing.Optional[torch.Tensor], typing.Sequence[torch.Tensor], typing.List[torch.Tensor], typing.Sequence[typing.Optional[torch.Tensor]], typing.List[typing.Optional[torch.Tensor]], <class 'int'>, typing.Optional[int], typing.Sequence[int], typing.List[int], typing.Optional[typing.Sequence[int]], typing.Optional[typing.List[int]], <class 'float'>, typing.Optional[float], typing.Sequence[float], typing.List[float], typing.Optional[typing.Sequence[float]], typing.Optional[typing.List[float]], <class 'bool'>, typing.Optional[bool], typing.Sequence[bool], typing.List[bool], typing.Optional[typing.Sequence[bool]], typing.Optional[typing.List[bool]], <class 'str'>, typing.Optional[str], typing.Union[int, float, bool], typing.Union[int, float, bool, NoneType], typing.Sequence[typing.Union[int, float, bool]], typing.List[typing.Union[int, float, bool]], <class 'torch.dtype'>, typing.Optional[torch.dtype], <class 'torch.device'>, typing.Optional[torch.device]]). Got func with signature (q: 'torch.Tensor', k: 'torch.Tensor', v: 'torch.Tensor', softmax_scale: 'float | None' = None, causal: 'bool' = False, qv: 'torch.Tensor | None' = None, q_descale: 'torch.Tensor | None' = None, k_descale: 'torch.Tensor | None' = None, v_descale: 'torch.Tensor | None' = None, attention_chunk: 'int' = 0, softcap: 'float' = 0.0, num_splits: 'int' = 1, pack_gqa: 'bool | None' = None, deterministic: 'bool' = False, sm_margin: 'int' = 0) -> 'tuple[torch.Tensor, torch.Tensor]')\n
+2026-06-30 13:12:45.848 | error | wvu6l3osr05myq | worker exited with exit code 1
+2026-06-30 19:34:41.980 | info | crhh74xi77i0hb | --- Starting Serverless Worker |  Version 1.10.0 ---\n
+2026-06-30 19:34:42.638 | info | crhh74xi77i0hb | Running 7 fitness check(s)...
+2026-06-30 19:34:42.754 | warning | crhh74xi77i0hb | GPU binary check failed: GPU test binary execution failed: GPU memory allocation test failed
+2026-06-30 19:34:42.755 | info | crhh74xi77i0hb | GPU fallback check passed: 1 GPU(s) detected (Note: Memory allocation NOT tested)
+2026-06-30 19:34:42.755 | info | crhh74xi77i0hb | Memory check passed: 431.59GB available (of 503.52GB total)
+2026-06-30 19:34:43.031 | info | crhh74xi77i0hb | Disk space check passed: 4.98GB free (99.7% available)
+2026-06-30 19:34:43.031 | info | crhh74xi77i0hb | Network connectivity passed: Connected to 8.8.8.8 (22ms)
+2026-06-30 19:34:43.031 | info | crhh74xi77i0hb | CUDA version check passed: 13.0 (minimum: 11.8)
+2026-06-30 19:34:45.244 | info | crhh74xi77i0hb | CUDA initialization passed: 1 device(s) initialized successfully
+2026-06-30 19:34:45.520 | info | crhh74xi77i0hb | GPU compute benchmark passed: Matrix multiply completed in 33ms
+2026-06-30 19:34:45.732 | info | crhh74xi77i0hb | All fitness checks passed. (2882.14ms)
+2026-06-30 19:34:45.733 | info | crhh74xi77i0hb | Jobs in queue: 1
+2026-06-30 19:34:46.066 | info | crhh74xi77i0hb | Jobs in progress: 1
+2026-06-30 19:34:46.066 | info | crhh74xi77i0hb | Started.
+2026-06-30 19:34:46.066 | error | crhh74xi77i0hb | Captured Handler Exception
+2026-06-30 19:34:46.261 | error | crhh74xi77i0hb | {\n    "error_type": "<class 'AttributeError'>",\n    "error_message": "'DummyXPU' object has no attribute 'device_count'",\n    "error_traceback": "Traceback (most recent call last):\n  File \"/opt/conda/lib/python3.10/site-packages/runpod/serverless/modules/rp_job.py\", line 257, in run_job\n    handler_return = handler(job)\n  File \"/app/handler.py\", line 26, in generate_video\n    from diffusers import CogVideoXPipeline\n  File \"/opt/conda/lib/python3.10/site-packages/diffusers/__init__.py\", line 5, in <module>\n    from .utils import (\n  File \"/opt/conda/lib/python3.10/site-packages/diffusers/utils/__init__.py\", line 135, in <module>\n    from .peft_utils import (\n  File \"/opt/conda/lib/python3.10/site-packages/diffusers/utils/peft_utils.py\", line 26, in <module>\n    from .torch_utils import empty_device_cache\n  File \"/opt/conda/lib/python3.10/site-packages/diffusers/utils/torch_utils.py\", line 46, in <module>\n    \"xpu\": torch.xpu.device_count,\nAttributeError: 'DummyXPU' object has no attribute 'device_count'\n",\n    "hostname": "crhh74xi77i0hb-64411540",\n    "worker_id": "crhh74xi77i0hb",\n    "runpod_version": "1.10.0"\n}
+2026-06-30 19:34:46.261 | info | crhh74xi77i0hb | Finished.
