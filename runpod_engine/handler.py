@@ -20,9 +20,8 @@ def generate_video(job):
     # PyTorch 2.1.0 nggak punya 'xpu', jadi kita bikin bohongan biar diffusers nggak crash.
     if not hasattr(torch, 'xpu'):
         class DummyXPU:
-            def empty_cache(self): pass
-            def device_count(self): return 0
             def is_available(self): return False
+            def __getattr__(self, name): return lambda *args, **kwargs: 0
         torch.xpu = DummyXPU()
 
     from diffusers import CogVideoXPipeline
