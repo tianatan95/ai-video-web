@@ -18,7 +18,8 @@ def generate_video(job):
     import torch
     
     from diffusers import CogVideoXPipeline
-    from diffusers.utils import export_to_video
+    import imageio
+    import numpy as np
     
     # Lazy Loading: Model baru didownload/diload pas ada pesanan masuk pertama kali.
     # Ini krusial biar Runpod nggak ngira mesin kita "Mati" gara-gara kelamaan download sebelum lapor siap.
@@ -53,9 +54,12 @@ def generate_video(job):
             generator=torch.Generator("cuda").manual_seed(42),
         ).frames[0]
 
-        # Simpan sementara jadi file .mp4
+        # Simpan sementara jadi file .mp4 dengan codec H.264 biar bisa diputar di Web (Chrome/Safari)
         output_path = "/tmp/hasil_video.mp4"
-        export_to_video(video_tensor, output_path, fps=8)
+        writer = imageio.get_writer(output_path, fps=8, codec='libx264', macro_block_size=None, pixelformat='yuv420p')
+        for frame in video_tensor:
+            writer.append_data(np.array(frame))
+        writer.close()
 
         # Karena ini API, dan video ukurannya besar (bisa kena limit payload Runpod), 
         # kita upload sementara ke catbox.moe lalu kirim URL-nya ke web Vercel.
