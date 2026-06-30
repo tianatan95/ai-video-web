@@ -24,8 +24,8 @@ def generate_video(job):
     # Lazy Loading: Model baru didownload/diload pas ada pesanan masuk pertama kali.
     # Ini krusial biar Runpod nggak ngira mesin kita "Mati" gara-gara kelamaan download sebelum lapor siap.
     if pipe is None:
-        print("🚀 Memuat dan mendownload model CogVideoX (15GB)... Harap tunggu.")
-        pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.float16)
+        print("🚀 Memuat dan mendownload model CogVideoX (30GB)... Harap tunggu.")
+        pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.bfloat16)
         
         # Jurus pamungkas ngirit VRAM biar nggak Out Of Memory (OOM) di 24GB
         pipe.enable_model_cpu_offload()
