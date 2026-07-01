@@ -45,13 +45,8 @@ def generate_video(job):
     duration = job_input.get('duration', '5s')
     
     # 1. Atur Resolusi (Aspect Ratio)
-    # CogVideoX-2B butuh dimensi kelipatan 16.
-    if aspect_ratio == '9:16':
-        width, height = 480, 720
-    elif aspect_ratio == '1:1':
-        width, height = 480, 480
-    else: # 16:9 default
-        width, height = 720, 480
+    # PENTING: CogVideoX-5B HANYA bisa dirender di 720x480. Ukuran lain bikin video jadi putih (NaN).
+    gen_width, gen_height = 720, 480
         
     # 2. Atur Durasi (Jumlah Frame)
     if duration == '3s':
@@ -68,18 +63,34 @@ def generate_video(job):
         video_tensor = pipe(
             prompt=prompt,
             num_frames=num_frames,
-            width=width,
-            height=height,
+            width=gen_width,
+            height=gen_height,
             guidance_scale=guidance_scale,
             num_inference_steps=50, # Jumlah step render, 50 udah ngasilin video mulus
             generator=torch.Generator("cuda").manual_seed(42),
         ).frames[0]
 
+        import numpy as np
+        
+        # Crop video hasil 720x480 ke Aspect Ratio yang diminta user
+        if aspect_ratio == '9:16':
+            # Potong tengah jadi ukuran 270x480
+            crop_w = 270
+            start_x = (720 - crop_w) // 2
+            cropped_frames = [np.array(f)[:, start_x:start_x+crop_w, :] for f in video_tensor]
+        elif aspect_ratio == '1:1':
+            # Potong tengah jadi ukuran 480x480
+            crop_w = 480
+            start_x = (720 - crop_w) // 2
+            cropped_frames = [np.array(f)[:, start_x:start_x+crop_w, :] for f in video_tensor]
+        else:
+            cropped_frames = [np.array(f) for f in video_tensor]
+
         # Simpan sementara jadi file .mp4 dengan kompresi tinggi biar ukurannya kecil (kisaran 1-2 MB)
         output_path = "/tmp/hasil_video.mp4"
         writer = imageio.get_writer(output_path, fps=8, codec='libx264', macro_block_size=None, pixelformat='yuv420p', quality=5)
-        for frame in video_tensor:
-            writer.append_data(np.array(frame))
+        for frame in cropped_frames:
+            writer.append_data(frame)
         writer.close()
 
         # Karena ini API, dan video ukurannya besar (bisa kena limit payload Runpod), 
