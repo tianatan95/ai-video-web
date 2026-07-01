@@ -113,3 +113,5 @@ def generate_video(job):
 
 # Menyalakan server API
 runpod.serverless.start({"handler": generate_video})
+
+# Trigger build v15
