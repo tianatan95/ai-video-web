@@ -29,8 +29,10 @@ def generate_video(job):
         
         # Jurus ngirit VRAM biar nggak Out Of Memory (OOM)
         pipe.enable_model_cpu_offload()
-        # FIX 2: VAE Tiling dinonaktifkan (di-comment) karena ini penyebab utama bug layar putih di CogVideoX
-        # pipe.vae.enable_tiling()
+        # FIX OOM: Nyalain lagi VAE Tiling + Slicing. 
+        # (Layar putih kemarin gara-gara bfloat16, sekarang udah pakai float16 jadi tiling aman dinyalain lagi)
+        pipe.vae.enable_tiling()
+        pipe.vae.enable_slicing()
         print("✅ Model AI sukses terpasang di VRAM!")
 
     job_input = job.get('input', {})
