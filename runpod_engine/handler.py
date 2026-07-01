@@ -56,7 +56,7 @@ def generate_video(job):
         
     guidance_scale = job_input.get('guidance_scale', 6.0)
 
-    print(f"🎬 Mulai merender video | Prompt: {prompt} | {aspect_ratio} ({width}x{height}) | Frames: {num_frames}")
+    print(f"🎬 Mulai merender video | Prompt: {prompt} | {aspect_ratio} ({gen_width}x{gen_height} cropped) | Frames: {num_frames}")
 
     try:
         # Proses merender teks jadi video (Ini yang bikin GPU kerja keras)
