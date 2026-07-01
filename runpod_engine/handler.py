@@ -29,7 +29,7 @@ def generate_video(job):
         
         # Jurus pamungkas ngirit VRAM biar nggak Out Of Memory (OOM) di 24GB
         pipe.enable_model_cpu_offload()
-        pipe.vae.enable_slicing()
+        # pipe.vae.enable_slicing() # HAPUS INI: Slicing sering bikin video jadi putih (NaNs) di versi 5B
         pipe.vae.enable_tiling()
         print("✅ Model AI sukses terpasang di VRAM!")
 
@@ -43,11 +43,11 @@ def generate_video(job):
     # 1. Atur Resolusi (Aspect Ratio)
     # CogVideoX-2B butuh dimensi kelipatan 16.
     if aspect_ratio == '9:16':
-        width, height = 432, 768
+        width, height = 480, 720
     elif aspect_ratio == '1:1':
-        width, height = 512, 512
+        width, height = 480, 480
     else: # 16:9 default
-        width, height = 768, 432
+        width, height = 720, 480
         
     # 2. Atur Durasi (Jumlah Frame)
     if duration == '3s':

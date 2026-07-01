@@ -1,8 +1,8 @@
 runpod
 torch
-diffusers>=0.30.0
+diffusers>=0.31.0
 transformers
-accelerate
+accelerate>=0.33.0
 imageio[ffmpeg]
 sentencepiece
 tiktoken
