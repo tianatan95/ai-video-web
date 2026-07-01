@@ -3,6 +3,10 @@ import base64
 # Trigger Github Action v2
 import os
 
+# Atur environment variable ini SEBELUM import torch buat ngehindarin fragmentasi VRAM!
+# Ini ngebantu banget nge-fix OOM karena ada 9GB VRAM yang "nyangkut" (reserved but unallocated).
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
 # Menggunakan CogVideoX-5B buatan THUDM. Ini adalah versi raksasa (5 Miliar Parameter) 
 # yang jauh lebih pintar bikin manusia realistis dibanding versi 2B.
 MODEL_ID = "THUDM/CogVideoX-5b"
