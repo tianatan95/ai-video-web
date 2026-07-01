@@ -3,13 +3,9 @@ import base64
 # Trigger Github Action v2
 import os
 
-# Atur environment variable ini SEBELUM import torch buat ngehindarin fragmentasi VRAM!
-# Ini ngebantu banget nge-fix OOM karena ada 9GB VRAM yang "nyangkut" (reserved but unallocated).
-os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
-
-# Menggunakan CogVideoX-5B buatan THUDM. Ini adalah versi raksasa (5 Miliar Parameter) 
-# yang jauh lebih pintar bikin manusia realistis dibanding versi 2B.
-MODEL_ID = "THUDM/CogVideoX-5b"
+# Menggunakan CogVideoX-2B buatan THUDM. Ini adalah versi yang paling stabil dan terbukti
+# jalan 100% di GPU lo tanpa error putih/black screen.
+MODEL_ID = "THUDM/CogVideoX-2b"
 
 # Variabel global untuk nyimpen model biar nggak didownload ulang terus
 pipe = None
@@ -28,24 +24,11 @@ def generate_video(job):
     # Lazy Loading: Model baru didownload/diload pas ada pesanan masuk pertama kali.
     # Ini krusial biar Runpod nggak ngira mesin kita "Mati" gara-gara kelamaan download sebelum lapor siap.
     if pipe is None:
-        print("🚀 Memuat dan mendownload model CogVideoX (30GB)... Harap tunggu.")
-        pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.float16)
-        
-        # JURUS PAMUNGKAS ANTI BLANK PUTIH/HITAM:
-        # VAE kita paksa jalan di format float32 biar memorinya nggak luber (Overflow).
-        pipe.vae = pipe.vae.to(dtype=torch.float32)
-        
-        # Tambahan: Karena Pipeline ngirim data float16, kita harus cegat dan ubah 
-        # datanya jadi float32 sebelum masuk ke VAE biar tipenya nggak tabrakan.
-        original_decode = pipe.vae.decode
-        def custom_decode(z, *args, **kwargs):
-            return original_decode(z.to(torch.float32), *args, **kwargs)
-        pipe.vae.decode = custom_decode
+        print("🚀 Memuat dan mendownload model CogVideoX-2B (15GB)... Harap tunggu.")
+        pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.bfloat16)
         
         # Jurus ngirit VRAM biar nggak Out Of Memory (OOM)
         pipe.enable_model_cpu_offload()
-        # Nyalain lagi Tiling karena VAE float32 butuh memori gede banget, tapi sekarang 
-        # aman karena ukuran layar udah kita patenin ke 720x480.
         pipe.vae.enable_tiling()
         print("✅ Model AI sukses terpasang di VRAM!")
 
