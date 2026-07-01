@@ -29,12 +29,17 @@ def generate_video(job):
     # Ini krusial biar Runpod nggak ngira mesin kita "Mati" gara-gara kelamaan download sebelum lapor siap.
     if pipe is None:
         print("🚀 Memuat dan mendownload model CogVideoX (30GB)... Harap tunggu.")
-        pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.bfloat16)
+        pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.float16)
+        
+        # JURUS PAMUNGKAS ANTI BLANK PUTIH/HITAM:
+        # VAE kita paksa jalan di format float32 biar memorinya nggak luber (Overflow).
+        pipe.vae = pipe.vae.to(dtype=torch.float32)
         
         # Jurus ngirit VRAM biar nggak Out Of Memory (OOM)
         pipe.enable_model_cpu_offload()
-        # VAE Tiling dan Slicing kita matikan total, karena VGA 24GB kuat nahan VAE murni.
-        # Fitur tiling sering bikin gambar ngeblank putih/hitam di CogVideoX-5B.
+        # Nyalain lagi Tiling karena VAE float32 butuh memori gede banget, tapi sekarang 
+        # aman karena ukuran layar udah kita patenin ke 720x480.
+        pipe.vae.enable_tiling()
         print("✅ Model AI sukses terpasang di VRAM!")
 
     job_input = job.get('input', {})
