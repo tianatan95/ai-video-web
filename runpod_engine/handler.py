@@ -30,10 +30,7 @@ def generate_video(job):
         
         # Jurus ngirit VRAM biar nggak Out Of Memory (OOM)
         pipe.enable_model_cpu_offload()
-        # FIX OOM: Nyalain lagi VAE Tiling + Slicing. 
-        # (Layar putih kemarin gara-gara bfloat16, sekarang udah pakai float16 jadi tiling aman dinyalain lagi)
         pipe.vae.enable_tiling()
-        pipe.vae.enable_slicing()
         print("✅ Model AI sukses terpasang di VRAM!")
 
     job_input = job.get('input', {})
@@ -53,8 +50,7 @@ def generate_video(job):
     else:
         num_frames = 49 # Maksimal ~6 detik biar VRAM nggak jebol
         
-    # FIX 3: Turunkan guidance_scale sedikit biar hasil render nggak gampang hancur (blank putih)
-    guidance_scale = job_input.get('guidance_scale', 5.0)
+    guidance_scale = job_input.get('guidance_scale', 6.0)
 
     print(f"🎬 Mulai merender video | Prompt: {prompt} | {aspect_ratio} ({gen_width}x{gen_height} cropped) | Frames: {num_frames}")
 
