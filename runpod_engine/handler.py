@@ -22,14 +22,15 @@ def generate_video(job):
     import numpy as np
     
     # Lazy Loading: Model baru didownload/diload pas ada pesanan masuk pertama kali.
-    # Ini krusial biar Runpod nggak ngira mesin kita "Mati" gara-gara kelamaan download sebelum lapor siap.
     if pipe is None:
         print("🚀 Memuat dan mendownload model CogVideoX-2B (15GB)... Harap tunggu.")
-        pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.bfloat16)
+        # FIX 1: Ubah bfloat16 jadi float16 (karena beberapa GPU Runpod bikin layar putih kalau pakai bfloat16)
+        pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.float16)
         
         # Jurus ngirit VRAM biar nggak Out Of Memory (OOM)
         pipe.enable_model_cpu_offload()
-        pipe.vae.enable_tiling()
+        # FIX 2: VAE Tiling dinonaktifkan (di-comment) karena ini penyebab utama bug layar putih di CogVideoX
+        # pipe.vae.enable_tiling()
         print("✅ Model AI sukses terpasang di VRAM!")
 
     job_input = job.get('input', {})
@@ -49,7 +50,8 @@ def generate_video(job):
     else:
         num_frames = 49 # Maksimal ~6 detik biar VRAM nggak jebol
         
-    guidance_scale = job_input.get('guidance_scale', 6.0)
+    # FIX 3: Turunkan guidance_scale sedikit biar hasil render nggak gampang hancur (blank putih)
+    guidance_scale = job_input.get('guidance_scale', 5.0)
 
     print(f"🎬 Mulai merender video | Prompt: {prompt} | {aspect_ratio} ({gen_width}x{gen_height} cropped) | Frames: {num_frames}")
 
