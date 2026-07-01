@@ -76,12 +76,14 @@ def generate_video(job):
             # Potong tengah jadi ukuran 270x480
             crop_w = 270
             start_x = (720 - crop_w) // 2
-            cropped_frames = [np.array(f)[:, start_x:start_x+crop_w, :] for f in video_tensor]
+            # FIX BLANK PUTIH 9:16: Wajib pakai .copy() biar array-nya contiguous (nyambung di memori).
+            # Kalau array hasil slice langsung dikasih ke imageio ffmpeg, videonya bakal error/blank!
+            cropped_frames = [np.array(f)[:, start_x:start_x+crop_w, :].copy() for f in video_tensor]
         elif aspect_ratio == '1:1':
             # Potong tengah jadi ukuran 480x480
             crop_w = 480
             start_x = (720 - crop_w) // 2
-            cropped_frames = [np.array(f)[:, start_x:start_x+crop_w, :] for f in video_tensor]
+            cropped_frames = [np.array(f)[:, start_x:start_x+crop_w, :].copy() for f in video_tensor]
         else:
             cropped_frames = [np.array(f) for f in video_tensor]
 
