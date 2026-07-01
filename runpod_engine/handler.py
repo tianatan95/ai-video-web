@@ -35,6 +35,13 @@ def generate_video(job):
         # VAE kita paksa jalan di format float32 biar memorinya nggak luber (Overflow).
         pipe.vae = pipe.vae.to(dtype=torch.float32)
         
+        # Tambahan: Karena Pipeline ngirim data float16, kita harus cegat dan ubah 
+        # datanya jadi float32 sebelum masuk ke VAE biar tipenya nggak tabrakan.
+        original_decode = pipe.vae.decode
+        def custom_decode(z, *args, **kwargs):
+            return original_decode(z.to(torch.float32), *args, **kwargs)
+        pipe.vae.decode = custom_decode
+        
         # Jurus ngirit VRAM biar nggak Out Of Memory (OOM)
         pipe.enable_model_cpu_offload()
         # Nyalain lagi Tiling karena VAE float32 butuh memori gede banget, tapi sekarang 

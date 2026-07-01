@@ -1,3 +1,1 @@
-Error Raw: {"error":"{\"error_type\": \"<class 'NameError'>\", \"error_message\": \"name 'width' is not defined\", \"error_traceback\": \"Traceback (most recent call last):\\n File \\\"/usr/local/lib/python3.12/dist-packages/runpod/serverless/modules/rp_job.py\\\", line 257, in run_job\\n handler_return = handler(job)\\n ^^^^^^^^^^^^\\n File \\\"/app/handler.py\\\", line 59, in generate_video\\n print(f\\\"\\ud83c\\udfac Mulai merender video | Prompt: {prompt} | {aspect_ratio} ({width}x{height}) | Frames: {num_frames}\\\")\\n ^^^^^\\nNameError: name 'width' is not defined\\n\", \"hostname\": \"bypza4qckxiyec-644110df\", \"worker_id\": \"bypza4qckxiyec\", \"runpod_version\": \"1.10.0\"}"}
-
-Please wait, magic is happening...
+AI Error: Input type (c10::Half) and bias type (float) should be the same
