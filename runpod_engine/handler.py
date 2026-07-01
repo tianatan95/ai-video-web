@@ -27,10 +27,10 @@ def generate_video(job):
         print("🚀 Memuat dan mendownload model CogVideoX (30GB)... Harap tunggu.")
         pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.bfloat16)
         
-        # Jurus pamungkas ngirit VRAM biar nggak Out Of Memory (OOM) di 24GB
+        # Jurus ngirit VRAM biar nggak Out Of Memory (OOM)
         pipe.enable_model_cpu_offload()
-        # pipe.vae.enable_slicing() # HAPUS INI: Slicing sering bikin video jadi putih (NaNs) di versi 5B
-        pipe.vae.enable_tiling()
+        # VAE Tiling dan Slicing kita matikan total, karena VGA 24GB kuat nahan VAE murni.
+        # Fitur tiling sering bikin gambar ngeblank putih/hitam di CogVideoX-5B.
         print("✅ Model AI sukses terpasang di VRAM!")
 
     job_input = job.get('input', {})
