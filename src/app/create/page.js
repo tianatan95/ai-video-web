@@ -161,7 +161,7 @@ export default function Home() {
                 controls 
                 autoPlay 
                 loop 
-                style={{ width: "100%", display: "block" }} 
+                style={{ width: "100%", maxHeight: "500px", objectFit: "contain", display: "block", margin: "0 auto", backgroundColor: "#000" }} 
               />
             </div>
           ) : (

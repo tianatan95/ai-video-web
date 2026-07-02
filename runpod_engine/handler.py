@@ -3,9 +3,9 @@ import base64
 # Trigger Github Action v2
 import os
 
-# Menggunakan CogVideoX-2B buatan THUDM. Ini adalah versi yang paling stabil dan terbukti
-# jalan 100% di GPU lo tanpa error putih/black screen.
-MODEL_ID = "THUDM/CogVideoX-2b"
+# Menggunakan CogVideoX-5B buatan THUDM. Ini adalah versi yang jauh lebih pintar
+# dan stabil dari 2B. VRAM 24GB masih kuat ngangkat asal pakai CPU offloading.
+MODEL_ID = "THUDM/CogVideoX-5b"
 
 # Variabel global untuk nyimpen model biar nggak didownload ulang terus
 pipe = None
