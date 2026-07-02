@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request) {
   try {
-    const { prompt } = await request.json();
+    const { prompt, aspectRatio, duration } = await request.json();
     
     if (!prompt) {
       return NextResponse.json({ error: "Prompt is required" }, { status: 400 });
@@ -15,6 +15,9 @@ export async function POST(request) {
       return NextResponse.json({ error: "Server Configuration Error" }, { status: 500 });
     }
 
+    // Convert duration string (e.g. '10s') to number (10)
+    const durationNum = duration ? parseInt(duration.replace('s', '')) : 5;
+
     // Pakai '/run' (bukan '/runsync') biar Vercel nggak timeout
     const response = await fetch(`https://api.runpod.ai/v2/${ENDPOINT_ID}/run`, {
       method: 'POST',
@@ -25,6 +28,8 @@ export async function POST(request) {
       body: JSON.stringify({
         input: {
           prompt: prompt,
+          aspect_ratio: aspectRatio || '16:9',
+          duration: durationNum,
           num_frames: 49,
           guidance_scale: 6.0
         }
