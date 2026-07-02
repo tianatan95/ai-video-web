@@ -37,7 +37,8 @@ def generate_video(job):
     
     # Mengambil settingan dari Vercel
     prompt = job_input.get('prompt', 'A cinematic tracking shot...')
-    aspect_ratio = job_input.get('aspectRatio', '16:9')
+    # Fix bug: Next.js API ngirim aspect_ratio, tapi fallback juga ke aspectRatio
+    aspect_ratio = job_input.get('aspect_ratio', job_input.get('aspectRatio', '16:9'))
     duration = job_input.get('duration', '5s')
     
     # 1. Atur Resolusi (Aspect Ratio)
@@ -52,18 +53,25 @@ def generate_video(job):
         
     guidance_scale = job_input.get('guidance_scale', 6.0)
 
-    print(f"🎬 Mulai merender video | Prompt: {prompt} | {aspect_ratio} ({gen_width}x{gen_height} cropped) | Frames: {num_frames}")
+    # Tambahkan kualitas dan safety guard agar model tidak halu (peot/naked)
+    enhanced_prompt = prompt.strip() + ", masterpiece, best quality, highly detailed, safe for work, fully clothed, perfect anatomy, stable, 4k, cinematic lighting"
+    
+    # Gunakan seed random agar setiap render ada variasi yang beda
+    import random
+    seed = random.randint(0, 2**32 - 1)
+
+    print(f"🎬 Mulai merender video | Seed: {seed} | Prompt: {prompt} | {aspect_ratio} ({gen_width}x{gen_height} cropped) | Frames: {num_frames}")
 
     try:
         # Proses merender teks jadi video (Ini yang bikin GPU kerja keras)
         video_tensor = pipe(
-            prompt=prompt,
+            prompt=enhanced_prompt,
             num_frames=num_frames,
             width=gen_width,
             height=gen_height,
             guidance_scale=guidance_scale,
             num_inference_steps=50, # Jumlah step render, 50 udah ngasilin video mulus
-            generator=torch.Generator("cuda").manual_seed(42),
+            generator=torch.Generator("cuda").manual_seed(seed),
         ).frames[0]
 
         import numpy as np
