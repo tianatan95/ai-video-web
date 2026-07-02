@@ -3,9 +3,8 @@ import base64
 # Trigger Github Action v2
 import os
 
-# Menggunakan CogVideoX-2B buatan THUDM. Ini adalah versi yang paling stabil dan terbukti
-# jalan 100% di GPU lo tanpa error putih/black screen.
-MODEL_ID = "THUDM/CogVideoX-2b"
+# Menggunakan CogVideoX-5B buatan THUDM. Otaknya lebih besar jadi hasil video nggak gampang peot.
+MODEL_ID = "THUDM/CogVideoX-5b"
 
 # Variabel global untuk nyimpen model biar nggak didownload ulang terus
 pipe = None
@@ -23,7 +22,7 @@ def generate_video(job):
     
     # Lazy Loading: Model baru didownload/diload pas ada pesanan masuk pertama kali.
     if pipe is None:
-        print("🚀 Memuat dan mendownload model CogVideoX-2B (15GB)... Harap tunggu.")
+        print("🚀 Memuat dan mendownload model CogVideoX-5B (30GB)... Harap tunggu.")
         # FIX FATAL: Balikin ke bfloat16! CogVideoX kalau dipaksa jalan di float16 bakal NaN (overflow)
         # yang bikin SEMUA video jadi blank putih. (Bfloat16 wajib buat model ini).
         pipe = CogVideoXPipeline.from_pretrained(MODEL_ID, torch_dtype=torch.bfloat16)
